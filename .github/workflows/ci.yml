@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,14 +17,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Check Node Version
-        run: node -v
-
-      - name: Check NPM Version
-        run: npm -v
-
-      - name: Install Dependencies
-        run: npm install
+      - name: Clean Install
+        run: npm ci
 
       - name: Run Tests
-        run: npm test
+        run: npx jest
